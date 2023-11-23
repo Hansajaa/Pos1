@@ -15,3 +15,7 @@ S
 0src/main/java/Controller/ItemFormController.java,7\d\7db5b608d62947a04aea4b2f4b8d6ee3d42fc07e
 R
 "src/main/java/DB/DBConnection.java,b\3\b3dd95a9b2dd999b808eba49a73a9d8907198036
+M
+src/main/java/Model/Item.java,f\8\f8bf99e0cfaec101ea646aa13bb35e5d8a23d036
+O
+src/main/java/Model/ItemTm.java,d\c\dca5fdafcc0361fd131f9fd7c0a3f44f36fdb4b5
