@@ -48,7 +48,7 @@ public class DashboardFormController {
     }
 
     public void itemButtonOnAction(ActionEvent actionEvent) throws IOException {
-        Stage stage=(Stage)dashboardPane.getScene().getWindow();
+        Stage stage = (Stage) dashboardPane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ItemForm.fxml"))));
         stage.show();
     }

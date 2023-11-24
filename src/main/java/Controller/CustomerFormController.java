@@ -2,7 +2,7 @@ package Controller;
 
 import DB.DBConnection;
 import Model.Customer;
-import Model.CustomerTm;
+import Model.Tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -21,8 +21,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 public class CustomerFormController {
-
-    public JFXButton btnBack;
     public AnchorPane customerPane;
     public JFXButton btnSave;
     public JFXButton btnUpdate;
@@ -109,16 +107,6 @@ public class CustomerFormController {
         }*/
     }
 
-    public void backButtonOnAction(ActionEvent actionEvent) {
-        Stage stage=(Stage) customerPane.getScene().getWindow();
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/DashboardForm.fxml"))));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void saveButtonOnAction(ActionEvent actionEvent) {
         if (!(txtId.getText()==null || txtName.getText()==null || txtAddress.getText()==null || txtSalary.getText()==null)) {
             Customer c = new Customer(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
@@ -145,5 +133,11 @@ public class CustomerFormController {
 
     public void refreshButtonOnAction(ActionEvent actionEvent) {
         loadCustomerTable();
+    }
+
+    public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage=(Stage) customerPane.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/DashboardForm.fxml"))));
+        stage.show();
     }
 }

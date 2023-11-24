@@ -1,22 +1,8 @@
 
-Q
-java:S3740)"/Provide the parametrized type for this generic.(€¡¢‚øÿÿÿÿ8ïŒ“—¾1
-Q
-java:S3740,"/Provide the parametrized type for this generic.(…ó®«úÿÿÿÿ8ïŒ“—¾1
-L
-java:S3740/"/Provide the parametrized type for this generic.(èİÀ¤8ïŒ“—¾1
-Q
-java:S37402"/Provide the parametrized type for this generic.(ÖÜÃ€ÿÿÿÿÿ8ïŒ“—¾1
-Q
-java:S37405"/Provide the parametrized type for this generic.(ñıÉŞúÿÿÿÿ8ïŒ“—¾1
-L
-java:S37408"/Provide the parametrized type for this generic.(ÚÊØ˜8ïŒ“—¾1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8òŒ“—¾1
-
-java:S1186A"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ŠÑÌİ8ùŒ“—¾1
-
-java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ôÍf8ùŒ“—¾1
-
-java:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ§„>8ùŒ“—¾1
+v
+java:S1104"TMake itemPane a static final constant or non-public and provide accessors if needed.(ñˆ“éıÿÿÿÿ8éÌ‚À1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8êÌ‚À1
 O
-java:S1172I"2Remove this unused method parameter "actionEvent".(÷ïÆı8üŒ“—¾1
+java:S1172"2Remove this unused method parameter "actionEvent".(öÛç‰8¶Í¦‚À1
+O
+java:S1128"-Remove this unused import 'javafx.fxml.FXML'.(ÃÚ¢„şÿÿÿÿ8ïÌ‚À1

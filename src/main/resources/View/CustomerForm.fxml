@@ -2,12 +2,14 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane fx:id="customerPane" prefHeight="587.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerFormController">
    <children>
@@ -15,11 +17,17 @@
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnUpdate" layoutX="480.0" layoutY="156.0" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: #ff5a08; -fx-background-radius: 10px;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXTextField fx:id="txtId" layoutX="40.0" layoutY="107.0" unFocusColor="BLACK" />
       <JFXTextField fx:id="txtName" layoutX="201.0" layoutY="107.0" />
@@ -30,11 +38,6 @@
             <Font name="Baskerville Old Face" size="13.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnBack" layoutX="14.0" layoutY="14.0" onAction="#backButtonOnAction" prefHeight="46.0" prefWidth="120.0" style="-fx-background-color: #cc0606; -fx-background-radius: 15;" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </JFXButton>
       <Text layoutX="253.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="Baskerville Old Face" size="13.0" />
@@ -54,6 +57,9 @@
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <TableView fx:id="tblCustomer" layoutX="20.0" layoutY="225.0" prefHeight="293.0" prefWidth="661.0">
         <columns>
@@ -65,5 +71,17 @@
             <TableColumn fx:id="colOption" prefWidth="137.0" text="Option" />
         </columns>
       </TableView>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="14.0" onAction="#backButtonOnAction" prefHeight="45.0" prefWidth="42.0">
+         <graphic>
+            <ImageView fitHeight="53.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </AnchorPane>

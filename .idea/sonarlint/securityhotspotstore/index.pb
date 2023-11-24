@@ -19,3 +19,13 @@ M
 src/main/java/Model/Item.java,f\8\f8bf99e0cfaec101ea646aa13bb35e5d8a23d036
 O
 src/main/java/Model/ItemTm.java,d\c\dca5fdafcc0361fd131f9fd7c0a3f44f36fdb4b5
+V
+&src/main/java/Model/Tm/CustomerTm.java,5\f\5f2ff7742fefa8f312123a85dc5750d0b334e612
+R
+"src/main/java/Model/Tm/ItemTm.java,0\3\0346a9b3be41cebeca85c5b8b80c9dcaa46c4b9f
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+Å
+Q.idea/sonarlint/securityhotspotstore/5/f/5f2ff7742fefa8f312123a85dc5750d0b334e612,1\9\19f99cdcd2b0d3d72ec52e9fc138c0fc8680937f
