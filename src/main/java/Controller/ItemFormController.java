@@ -2,25 +2,35 @@ package Controller;
 
 import DB.DBConnection;
 import Dto.Item;
+import Dto.Tm.CustomerTm;
 import Dto.Tm.ItemTm;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
+import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ItemFormController {
 
-    public JFXTreeTableView tblItem;
+    public JFXTreeTableView<ItemTm> tblItem;
     @FXML
     private BorderPane itemPane;
 
@@ -51,9 +61,64 @@ public class ItemFormController {
     @FXML
     private TreeTableColumn colOption;
 
+    public void initialize() {
+        colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
+        colDesc.setCellValueFactory(new TreeItemPropertyValueFactory<>("description"));
+        colPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("unitPrice"));
+        colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("quantityOnHand"));
+        colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
+        loadItemTable();
+    }
+
+    private void loadItemTable() {
+
+        ObservableList<ItemTm> itm = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM item";
+        try {
+            Statement stm = DBConnection.getInstance().getConnection().createStatement();
+            ResultSet result = stm.executeQuery(sql);
+            while(result.next()){
+                JFXButton btn =new JFXButton("Delete");
+                ItemTm i = new ItemTm(
+                        result.getString(1),
+                        result.getString(2),
+                        result.getDouble(3),
+                        result.getInt(4),
+                        btn
+                );
+                btn.setOnAction(ActionEvent ->{
+                    deleteItem(i.getCode());
+                });
+                itm.add(i);
+            }
+            RecursiveTreeItem treeItem = new RecursiveTreeItem<>(itm, RecursiveTreeObject::getChildren);
+            tblItem.setRoot(treeItem);
+            tblItem.setShowRoot(false);
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteItem(String code) {
+        String sql = "DELETE FROM item WHERE code=?";
+        try {
+            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+            pstm.setString(1,code);
+            int result = pstm.executeUpdate(sql);
+            if (result>0){
+                new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
+                loadItemTable();
+            }else{
+                new Alert(Alert.AlertType.ERROR,"Something went wrong !").show();
+            }
+        } catch (SQLException  | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void refreshButtonOnAction(javafx.event.ActionEvent actionEvent) {
-
+        loadItemTable();
     }
 
     public void updateButtonOnAction(ActionEvent actionEvent) {
@@ -85,6 +150,7 @@ public class ItemFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        loadItemTable();
     }
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {

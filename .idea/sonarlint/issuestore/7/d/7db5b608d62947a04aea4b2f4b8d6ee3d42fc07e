@@ -1,28 +1,37 @@
 
+Q
+java:S37402"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8¬Ó›À1
+Q
+java:S37405"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8¬Ó›À1
+Q
+java:S37408"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8¬Ó›À1
+Q
+java:S3740;"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8¬Ó›À1
+Q
+java:S3740>"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8­Ó›À1
 L
-java:S3740"/Provide the parametrized type for this generic.(­·Õ8ê”ÓÀ1
-Q
-java:S3740("/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8ë”ÓÀ1
-Q
-java:S3740+"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8ë”ÓÀ1
-Q
-java:S3740."/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8ë”ÓÀ1
-Q
-java:S37401"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8ë”ÓÀ1
-Q
-java:S37404"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8ë”ÓÀ1
+java:S3740^"/Provide the parametrized type for this generic.( åî¸8­Ó›À1
+r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ¤›úÿÿÿÿ8­Ó›À1
 p
-java:S1104"SMake tblItem a static final constant or non-public and provide accessors if needed.(­·Õ8ì”ÓÀ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ì”ÓÀ1
+java:S1104!"SMake tblItem a static final constant or non-public and provide accessors if needed.(ŸØå¼8­Ó›À1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8®Ó›À1
 l
-java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8‹•ÓÀ1
-
-java:S11867"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ§„>8‹•ÓÀ1
+java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8èÓ›À1
+i
+java:S2095N"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8èÓ›À1
+m
+java:S2095‰"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8èÓ›À1
 
-java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(°§¾8‹•ÓÀ1
-T
-java:S1172?"2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8•ÓÀ1
-O
-java:S1172Z"2Remove this unused method parameter "actionEvent".(öÛç‰8“•ÓÀ1
-G
-java:S1128"*Remove this unused import 'Dto.Tm.ItemTm'.(¯ô¥õ8™•ÓÀ1
+java:S1186|"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(°§¾8èÓ›À1
+N
+java:S1602Y",Remove useless curly braces around statement(ÎÈ¤›úÿÿÿÿ8íÓ›À1
+N
+java:S1172x"2Remove this unused method parameter "actionEvent".(Œ§„>8ğÓ›À1
+U
+java:S1172€"2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8òÓ›À1
+P
+java:S1172œ"2Remove this unused method parameter "actionEvent".(öÛç‰8Ÿé¡À1
+K
+java:S1128".Remove this unused import 'Dto.Tm.CustomerTm'.(¾Á«8óÒÀ1
+Z
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8óÒÀ1

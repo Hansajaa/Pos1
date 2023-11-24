@@ -105,10 +105,10 @@
                   <JFXTreeTableView fx:id="tblItem" GridPane.rowIndex="1">
                      <columns>
                         <TreeTableColumn fx:id="colCode" editable="false" prefWidth="97.0" text="Item Code" />
-                        <TreeTableColumn fx:id="colDesc" editable="false" prefWidth="210.0" text="Description" />
+                        <TreeTableColumn fx:id="colDesc" editable="false" prefWidth="186.0" text="Description" />
                         <TreeTableColumn fx:id="colPrice" editable="false" prefWidth="101.0" text="Unit Price" />
                         <TreeTableColumn fx:id="colQty" editable="false" prefWidth="115.0" text="Quantity On Hand" />
-                        <TreeTableColumn fx:id="colOption" editable="false" prefWidth="92.0" text="Option" />
+                        <TreeTableColumn fx:id="colOption" editable="false" prefWidth="116.0" text="Option" />
                      </columns>
                   </JFXTreeTableView>
                </children>
