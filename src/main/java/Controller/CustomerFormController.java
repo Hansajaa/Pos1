@@ -1,7 +1,7 @@
 package Controller;
 
 import DB.DBConnection;
-import Dto.Customer;
+import Dto.CustomerDto;
 import Dto.Tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -91,18 +91,22 @@ public class CustomerFormController {
     public void saveButtonOnAction(ActionEvent actionEvent) {
         if (!(txtId.getText()==null || txtName.getText()==null || txtAddress.getText()==null || txtSalary.getText()==null)) {
 
-            Customer c = new Customer(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
-            String sql = "INSERT INTO customer VALUES('" + c.getId() + "','" + c.getName() + "','" + c.getAddress() + "','" + c.getSalary() + "')";
+            CustomerDto c = new CustomerDto(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
+            String sql = "INSERT INTO customer VALUES(?,?,?,?)";
 
             try {
-                Statement stm = DBConnection.getInstance().getConnection().createStatement();
-                int result = stm.executeUpdate(sql);
+                PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+                pstm.setString(1,c.getId());
+                pstm.setString(2,c.getName());
+                pstm.setString(3,c.getAddress());
+                pstm.setDouble(4,c.getSalary());
+                int result = pstm.executeUpdate();
                 if (result > 0) {
                     new Alert(Alert.AlertType.INFORMATION, "Successfully Added !").show();
-                    txtId.setText("");
-                    txtName.setText("");
-                    txtAddress.setText("");
-                    txtSalary.setText("");
+                    txtId.clear();
+                    txtName.clear();
+                    txtAddress.clear();
+                    txtSalary.clear();
                 }
                 loadCustomerTable();
             } catch (ClassNotFoundException | SQLException e) {
@@ -117,7 +121,7 @@ public class CustomerFormController {
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage) customerPane.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/DashboardForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"))));
         stage.show();
     }
 }

@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-public class Item {
+public class ItemDto {
     private String Code;
     private String description;
     private double unitPrice;

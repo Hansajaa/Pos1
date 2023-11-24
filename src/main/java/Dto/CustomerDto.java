@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-public class Customer {
+public class CustomerDto {
     private String id;
     private String name;
     private String address;

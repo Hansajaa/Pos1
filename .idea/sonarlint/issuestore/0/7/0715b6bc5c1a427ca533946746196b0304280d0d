@@ -1,55 +1,53 @@
 
 L
-java:S3740!"/Provide the parametrized type for this generic.(“ĞÃâ8 Âá‹À1
+java:S3740!"/Provide the parametrized type for this generic.(“ĞÃâ8ªÔ’–À1
 Q
-java:S3740""/Provide the parametrized type for this generic.(ÊÚÎ¨ùÿÿÿÿ8 Âá‹À1
+java:S3740""/Provide the parametrized type for this generic.(ÊÚÎ¨ùÿÿÿÿ8ªÔ’–À1
 L
-java:S3740#"/Provide the parametrized type for this generic.(¯ÿı°8 Âá‹À1
+java:S3740#"/Provide the parametrized type for this generic.(¯ÿı°8ªÔ’–À1
 L
-java:S3740$"/Provide the parametrized type for this generic.(Ã‹äÄ8 Âá‹À1
+java:S3740$"/Provide the parametrized type for this generic.(Ã‹äÄ8ªÔ’–À1
 L
-java:S3740%"/Provide the parametrized type for this generic.(ºçÎ´8 Âá‹À1
-r	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ¤›úÿÿÿÿ8¡Âá‹À1
+java:S3740%"/Provide the parametrized type for this generic.(ºçÎ´8ªÔ’–À1
+r	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ¤›úÿÿÿÿ8«Ô’–À1
 z
-java:S1104"XMake customerPane a static final constant or non-public and provide accessors if needed.(šÿß­úÿÿÿÿ8¢Âá‹À1
+java:S1104"XMake customerPane a static final constant or non-public and provide accessors if needed.(šÿß­úÿÿÿÿ8¬Ô’–À1
 p
-java:S1104"SMake btnSave a static final constant or non-public and provide accessors if needed.(çˆ©Õ8¢Âá‹À1
+java:S1104"SMake btnSave a static final constant or non-public and provide accessors if needed.(çˆ©Õ8¬Ô’–À1
 r
-java:S1104"UMake btnUpdate a static final constant or non-public and provide accessors if needed.(§Å‰÷8¢Âá‹À1
+java:S1104"UMake btnUpdate a static final constant or non-public and provide accessors if needed.(§Å‰÷8¬Ô’–À1
 x
-java:S1104"VMake btnRefresh a static final constant or non-public and provide accessors if needed.(îÛ½²úÿÿÿÿ8¢Âá‹À1
+java:S1104"VMake btnRefresh a static final constant or non-public and provide accessors if needed.(îÛ½²úÿÿÿÿ8¬Ô’–À1
 n
-java:S1104"QMake txtId a static final constant or non-public and provide accessors if needed.(Ú…á¬8¢Âá‹À1
+java:S1104"QMake txtId a static final constant or non-public and provide accessors if needed.(Ú…á¬8¬Ô’–À1
 u
-java:S1104"SMake txtName a static final constant or non-public and provide accessors if needed.(¨äİìÿÿÿÿÿ8¢Âá‹À1
+java:S1104"SMake txtName a static final constant or non-public and provide accessors if needed.(¨äİìÿÿÿÿÿ8¬Ô’–À1
 x
-java:S1104"VMake txtAddress a static final constant or non-public and provide accessors if needed.(©ûîùıÿÿÿÿ8¢Âá‹À1
+java:S1104"VMake txtAddress a static final constant or non-public and provide accessors if needed.(©ûîùıÿÿÿÿ8¬Ô’–À1
 q
-java:S1104"UMake txtSalary a static final constant or non-public and provide accessors if needed.(‹À8¢Âá‹À1
+java:S1104"UMake txtSalary a static final constant or non-public and provide accessors if needed.(‹À8¬Ô’–À1
 t
-java:S1104 "WMake tblCustomer a static final constant or non-public and provide accessors if needed.(ãã¡Ä8¢Âá‹À1
+java:S1104 "WMake tblCustomer a static final constant or non-public and provide accessors if needed.(ãã¡Ä8¬Ô’–À1
 n
-java:S1104!"QMake colId a static final constant or non-public and provide accessors if needed.(“ĞÃâ8¢Âá‹À1
+java:S1104!"QMake colId a static final constant or non-public and provide accessors if needed.(“ĞÃâ8¬Ô’–À1
 u
-java:S1104""SMake colName a static final constant or non-public and provide accessors if needed.(ÊÚÎ¨ùÿÿÿÿ8¢Âá‹À1
+java:S1104""SMake colName a static final constant or non-public and provide accessors if needed.(ÊÚÎ¨ùÿÿÿÿ8¬Ô’–À1
 s
-java:S1104#"VMake colAddress a static final constant or non-public and provide accessors if needed.(¯ÿı°8¢Âá‹À1
+java:S1104#"VMake colAddress a static final constant or non-public and provide accessors if needed.(¯ÿı°8¬Ô’–À1
 r
-java:S1104$"UMake colSalary a static final constant or non-public and provide accessors if needed.(Ã‹äÄ8¢Âá‹À1
+java:S1104$"UMake colSalary a static final constant or non-public and provide accessors if needed.(Ã‹äÄ8¬Ô’–À1
 r
-java:S1104%"UMake colOption a static final constant or non-public and provide accessors if needed.(ºçÎ´8¢Âá‹À1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8£Âá‹À1
+java:S1104%"UMake colOption a static final constant or non-public and provide accessors if needed.(ºçÎ´8¬Ô’–À1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8®Ô’–À1
 i
-java:S2095N"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8¬¾ŒÀ1
+java:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8áÔ’–À1
 i
-java:S20954"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8¬¾ŒÀ1
-i
-java:S2095b"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8¬¾ŒÀ1
+java:S2095N"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8áÔ’–À1
 N
-java:S1602?",Remove useless curly braces around statement(ÎÈ¤›úÿÿÿÿ8ÃÂá‹À1
+java:S1602?",Remove useless curly braces around statement(ÎÈ¤›úÿÿÿÿ8èÔ’–À1
 T
-java:S1172["2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8ÇÂá‹À1
+java:S1172["2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8ëÔ’–À1
 T
-java:S1172r"2Remove this unused method parameter "actionEvent".(áËşÚÿÿÿÿÿ8ÌÂá‹À1
+java:S1172v"2Remove this unused method parameter "actionEvent".(áËşÚÿÿÿÿÿ8îÔ’–À1
 O
-java:S1172v"2Remove this unused method parameter "actionEvent".(öÛç‰8ÌÂá‹À1
+java:S1172z"2Remove this unused method parameter "actionEvent".(öÛç‰8îÔ’–À1

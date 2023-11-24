@@ -1,8 +1,7 @@
 package Controller;
 
 import DB.DBConnection;
-import Dto.Item;
-import Dto.Tm.CustomerTm;
+import Dto.ItemDto;
 import Dto.Tm.ItemTm;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -16,7 +15,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -101,11 +99,10 @@ public class ItemFormController {
     }
 
     private void deleteItem(String code) {
-        String sql = "DELETE FROM item WHERE code=?";
+        String sql = "DELETE FROM item WHERE code = '"+code+"'";
         try {
-            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-            pstm.setString(1,code);
-            int result = pstm.executeUpdate(sql);
+            Statement stm = DBConnection.getInstance().getConnection().createStatement();
+            int result = stm.executeUpdate(sql);
             if (result>0){
                 new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
                 loadItemTable();
@@ -126,7 +123,7 @@ public class ItemFormController {
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
-        Item item=new Item(
+        ItemDto item=new ItemDto(
                 txtCode.getText(),
                 txtDesc.getText(),
                 Double.parseDouble(txtPrice.getText()),
@@ -155,7 +152,7 @@ public class ItemFormController {
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage) itemPane.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/DashboardForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"))));
         stage.show();
     }
 }
