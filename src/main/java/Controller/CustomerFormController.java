@@ -1,8 +1,8 @@
 package Controller;
 
 import DB.DBConnection;
-import Model.Customer;
-import Model.Tm.CustomerTm;
+import Dto.Customer;
+import Dto.Tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;

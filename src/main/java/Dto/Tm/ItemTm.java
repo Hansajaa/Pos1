@@ -1,4 +1,4 @@
-package Model.Tm;
+package Dto.Tm;
 
 import javafx.scene.control.Button;
 import lombok.*;

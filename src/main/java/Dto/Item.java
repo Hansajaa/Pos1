@@ -1,4 +1,4 @@
-package Model;
+package Dto;
 
 
 import lombok.*;
