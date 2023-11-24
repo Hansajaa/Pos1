@@ -1,0 +1,5 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ş±°ú8°ÆÀ1
+k	java:S116"ORename this field "Code" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÓÄ€8¢°ÆÀ1
+Z
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8¤°ÆÀ1

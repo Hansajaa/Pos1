@@ -1,8 +1,28 @@
 
-v
-java:S1104"TMake itemPane a static final constant or non-public and provide accessors if needed.(ñˆ“éıÿÿÿÿ8éÌ‚À1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8êÌ‚À1
+L
+java:S3740"/Provide the parametrized type for this generic.(­·Õ8ê”ÓÀ1
+Q
+java:S3740("/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8ë”ÓÀ1
+Q
+java:S3740+"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8ë”ÓÀ1
+Q
+java:S3740."/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8ë”ÓÀ1
+Q
+java:S37401"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8ë”ÓÀ1
+Q
+java:S37404"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8ë”ÓÀ1
+p
+java:S1104"SMake tblItem a static final constant or non-public and provide accessors if needed.(­·Õ8ì”ÓÀ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ì”ÓÀ1
+l
+java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8‹•ÓÀ1
+
+java:S11867"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ§„>8‹•ÓÀ1
+
+java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(°§¾8‹•ÓÀ1
+T
+java:S1172?"2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8•ÓÀ1
 O
-java:S1172"2Remove this unused method parameter "actionEvent".(öÛç‰8¶Í¦‚À1
-O
-java:S1128"-Remove this unused import 'javafx.fxml.FXML'.(ÃÚ¢„şÿÿÿÿ8ïÌ‚À1
+java:S1172Z"2Remove this unused method parameter "actionEvent".(öÛç‰8“•ÓÀ1
+G
+java:S1128"*Remove this unused import 'Dto.Tm.ItemTm'.(¯ô¥õ8™•ÓÀ1

@@ -1,5 +1,6 @@
 package Dto.Tm;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.scene.control.Button;
 import lombok.*;
 
@@ -13,5 +14,5 @@ public class ItemTm {
     private String description;
     private double unitPrice;
     private int quantityOnHand;
-    private Button deleteButton;
+    private JFXButton btn;
 }

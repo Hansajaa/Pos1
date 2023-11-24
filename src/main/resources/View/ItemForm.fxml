@@ -50,14 +50,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="txtCode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
                   <Text layoutX="118.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                  <JFXTextField layoutX="61.0" layoutY="43.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="txtDesc" layoutX="61.0" layoutY="43.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Text layoutX="234.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
-                  <JFXTextField layoutX="164.0" layoutY="43.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="txtPrice" layoutX="164.0" layoutY="43.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <Text layoutX="418.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
-                  <JFXTextField layoutX="379.0" layoutY="43.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="txtQty" layoutX="379.0" layoutY="43.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -75,17 +75,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #1491d5; -fx-background-radius: 8;" text="Refresh" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <JFXButton onAction="#refreshButtonOnAction" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #1491d5; -fx-background-radius: 8;" text="Refresh" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #ff6900; -fx-background-radius: 8;" text="Update" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#updateButtonOnAction" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #ff6900; -fx-background-radius: 8;" text="Update" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #2cb531; -fx-background-radius: 8;" text="Save" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#saveButtonOnAction" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #2cb531; -fx-background-radius: 8;" text="Save" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -102,13 +102,13 @@
                 <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXTreeTableView GridPane.rowIndex="1">
+                  <JFXTreeTableView fx:id="tblItem" GridPane.rowIndex="1">
                      <columns>
-                        <TreeTableColumn editable="false" prefWidth="97.0" text="Item Code" />
-                        <TreeTableColumn editable="false" prefWidth="210.0" text="Description" />
-                        <TreeTableColumn editable="false" prefWidth="101.0" text="Unit Price" />
-                        <TreeTableColumn editable="false" prefWidth="115.0" text="Quantity On Hand" />
-                        <TreeTableColumn editable="false" prefWidth="92.0" text="Option" />
+                        <TreeTableColumn fx:id="colCode" editable="false" prefWidth="97.0" text="Item Code" />
+                        <TreeTableColumn fx:id="colDesc" editable="false" prefWidth="210.0" text="Description" />
+                        <TreeTableColumn fx:id="colPrice" editable="false" prefWidth="101.0" text="Unit Price" />
+                        <TreeTableColumn fx:id="colQty" editable="false" prefWidth="115.0" text="Quantity On Hand" />
+                        <TreeTableColumn fx:id="colOption" editable="false" prefWidth="92.0" text="Option" />
                      </columns>
                   </JFXTreeTableView>
                </children>
