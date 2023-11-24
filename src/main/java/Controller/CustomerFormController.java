@@ -49,9 +49,7 @@ public class CustomerFormController {
         ObservableList<CustomerTm> ctm = FXCollections.observableArrayList();
         String sql = "SELECT * FROM customer";
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade","root","Hansaja@1234");
-            Statement stm = connection.createStatement();
+            Statement stm = DBConnection.getInstance().getConnection().createStatement();
             ResultSet result = stm.executeQuery(sql);
             while(result.next()){
                 Button btn =new Button("Delete");
@@ -67,7 +65,6 @@ public class CustomerFormController {
                 });
                 ctm.add(c);
             }
-            connection.close();
             tblCustomer.setItems(ctm);
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -78,43 +75,27 @@ public class CustomerFormController {
     private void deleteCustomer(String id) {
         String sql = "DELETE FROM customer WHERE id='"+id+"'";
         try {
-            Statement stm = DBConnection.getInstance().getConnection().getStatement();
+            Statement stm = DBConnection.getInstance().getConnection().createStatement();
             int result = stm.executeUpdate(sql);
             if (result>0){
                 new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong !").show();
             }
-        } catch (SQLException e) {
+        } catch (SQLException  | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         loadCustomerTable();
-        /*try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "Hansaja@1234");
-            Statement stm = connection.createStatement();
-            int result = stm.executeUpdate(sql);
-            if (result > 0) {
-                new Alert(Alert.AlertType.INFORMATION, "Successfully Deleted !").show();
-                loadCustomerTable();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Something went wrong !");
-            }
-            loadCustomerTable();
-            connection.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
-        }*/
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
         if (!(txtId.getText()==null || txtName.getText()==null || txtAddress.getText()==null || txtSalary.getText()==null)) {
+
             Customer c = new Customer(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
             String sql = "INSERT INTO customer VALUES('" + c.getId() + "','" + c.getName() + "','" + c.getAddress() + "','" + c.getSalary() + "')";
+
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "Hansaja@1234");
-                Statement stm = connection.createStatement();
+                Statement stm = DBConnection.getInstance().getConnection().createStatement();
                 int result = stm.executeUpdate(sql);
                 if (result > 0) {
                     new Alert(Alert.AlertType.INFORMATION, "Successfully Added !").show();
@@ -124,7 +105,6 @@ public class CustomerFormController {
                     txtSalary.setText("");
                 }
                 loadCustomerTable();
-                connection.close();
             } catch (ClassNotFoundException | SQLException e) {
                 throw new RuntimeException(e);
             }

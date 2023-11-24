@@ -71,17 +71,17 @@
             <TableColumn fx:id="colOption" prefWidth="137.0" text="Option" />
         </columns>
       </TableView>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="14.0" onAction="#backButtonOnAction" prefHeight="45.0" prefWidth="42.0">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#backButtonOnAction" prefHeight="38.0" prefWidth="42.0" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
          <graphic>
-            <ImageView fitHeight="53.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/back.png" />
+                  <Image url="@../images/back_btn.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
    </children>
-   <cursor>
-      <Cursor fx:constant="HAND" />
-   </cursor>
 </AnchorPane>
