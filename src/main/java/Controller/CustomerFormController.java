@@ -3,6 +3,8 @@ package Controller;
 import DB.DBConnection;
 import Dto.CustomerDto;
 import Dto.Tm.CustomerTm;
+import Model.CustomerModel;
+import Model.Impl.CustomerModelImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -20,6 +22,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.List;
+
 public class CustomerFormController {
     public AnchorPane customerPane;
     public JFXButton btnSave;
@@ -36,7 +40,7 @@ public class CustomerFormController {
     public TableColumn colSalary;
     public TableColumn colOption;
 
-
+    CustomerModel customerModel=new CustomerModelImpl();
     public void initialize(){
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -47,17 +51,15 @@ public class CustomerFormController {
     }
     private void loadCustomerTable() {
         ObservableList<CustomerTm> ctm = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM customer";
         try {
-            Statement stm = DBConnection.getInstance().getConnection().createStatement();
-            ResultSet result = stm.executeQuery(sql);
-            while(result.next()){
+            List<CustomerDto> dtoList = customerModel.allCustomers();
+            for(CustomerDto dto:dtoList){
                 Button btn =new Button("Delete");
                 CustomerTm c = new CustomerTm(
-                        result.getString(1),
-                        result.getString(2),
-                        result.getString(3),
-                        result.getDouble(4),
+                        dto.getId(),
+                        dto.getName(),
+                        dto.getAddress(),
+                        dto.getSalary(),
                         btn
                 );
                 btn.setOnAction(ActionEvent ->{
@@ -73,11 +75,9 @@ public class CustomerFormController {
     }
 
     private void deleteCustomer(String id) {
-        String sql = "DELETE FROM customer WHERE id='"+id+"'";
         try {
-            Statement stm = DBConnection.getInstance().getConnection().createStatement();
-            int result = stm.executeUpdate(sql);
-            if (result>0){
+            boolean result = customerModel.deleteCustomer(id);
+            if (result){
                 new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong !").show();
@@ -89,29 +89,23 @@ public class CustomerFormController {
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
-        if (!(txtId.getText()==null || txtName.getText()==null || txtAddress.getText()==null || txtSalary.getText()==null)) {
 
-            CustomerDto c = new CustomerDto(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
-            String sql = "INSERT INTO customer VALUES(?,?,?,?)";
+        CustomerDto c = new CustomerDto(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
 
-            try {
-                PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-                pstm.setString(1,c.getId());
-                pstm.setString(2,c.getName());
-                pstm.setString(3,c.getAddress());
-                pstm.setDouble(4,c.getSalary());
-                int result = pstm.executeUpdate();
-                if (result > 0) {
-                    new Alert(Alert.AlertType.INFORMATION, "Successfully Added !").show();
-                    txtId.clear();
-                    txtName.clear();
-                    txtAddress.clear();
-                    txtSalary.clear();
-                }
+        try {
+            boolean isSaved = customerModel.saveCustomer(c);
+
+            if (isSaved){
                 loadCustomerTable();
-            } catch (ClassNotFoundException | SQLException e) {
-                throw new RuntimeException(e);
+                new Alert(Alert.AlertType.INFORMATION,"Customer Saved").show();
+                txtId.clear();
+                txtName.clear();
+                txtAddress.clear();
+                txtSalary.clear();
             }
+
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

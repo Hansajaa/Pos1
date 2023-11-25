@@ -15,6 +15,8 @@ r	java:S117W"QRename this local variable to match the regular expression '^[a-
 p
 java:S1104"SMake tblItem a static final constant or non-public and provide accessors if needed.(ŸØå¼8Ïë¿À1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8Ğë¿À1
+m
+java:S2095†"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8âÇî¢À1
 i
 java:S2095L"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8÷ë¿À1
 i
