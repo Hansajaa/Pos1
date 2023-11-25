@@ -76,8 +76,8 @@ public class CustomerFormController {
 
     private void deleteCustomer(String id) {
         try {
-            boolean result = customerModel.deleteCustomer(id);
-            if (result){
+            boolean isDelete = customerModel.deleteCustomer(id);
+            if (isDelete){
                 new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong !").show();

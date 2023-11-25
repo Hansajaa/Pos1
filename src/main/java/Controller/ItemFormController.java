@@ -3,6 +3,8 @@ package Controller;
 import DB.DBConnection;
 import Dto.ItemDto;
 import Dto.Tm.ItemTm;
+import Model.Impl.ItemModelImpl;
+import Model.ItemModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -25,6 +27,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
 
 public class ItemFormController {
 
@@ -59,6 +63,8 @@ public class ItemFormController {
     @FXML
     private TreeTableColumn colOption;
 
+    ItemModel itemModel=new ItemModelImpl();
+
     public void initialize() {
         colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
         colDesc.setCellValueFactory(new TreeItemPropertyValueFactory<>("description"));
@@ -71,17 +77,15 @@ public class ItemFormController {
     private void loadItemTable() {
 
         ObservableList<ItemTm> itm = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM item";
         try {
-            Statement stm = DBConnection.getInstance().getConnection().createStatement();
-            ResultSet result = stm.executeQuery(sql);
-            while(result.next()){
+            List<ItemDto> dtoList = itemModel.allItems();
+            for (ItemDto dto:dtoList){
                 JFXButton btn =new JFXButton("Delete");
                 ItemTm i = new ItemTm(
-                        result.getString(1),
-                        result.getString(2),
-                        result.getDouble(3),
-                        result.getInt(4),
+                        dto.getCode(),
+                        dto.getDescription(),
+                        dto.getUnitPrice(),
+                        dto.getQuantityOnHand(),
                         btn
                 );
                 btn.setOnAction(ActionEvent ->{
@@ -99,11 +103,9 @@ public class ItemFormController {
     }
 
     private void deleteItem(String code) {
-        String sql = "DELETE FROM item WHERE code = '"+code+"'";
         try {
-            Statement stm = DBConnection.getInstance().getConnection().createStatement();
-            int result = stm.executeUpdate(sql);
-            if (result>0){
+            boolean isDeleted = itemModel.deleteItem(code);
+            if (isDeleted){
                 new Alert(Alert.AlertType.INFORMATION,"Delete Successfully").show();
                 loadItemTable();
             }else{
@@ -123,21 +125,17 @@ public class ItemFormController {
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
+
         ItemDto item=new ItemDto(
                 txtCode.getText(),
                 txtDesc.getText(),
                 Double.parseDouble(txtPrice.getText()),
                 Integer.parseInt(txtQty.getText())
         );
-        String sql = "INSERT INTO item VALUES(?,?,?,?)";
+
         try {
-            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-            pstm.setString(1,item.getCode());
-            pstm.setString(2,item.getDescription());
-            pstm.setDouble(3,item.getUnitPrice());
-            pstm.setInt(4,item.getQuantityOnHand());
-            int result = pstm.executeUpdate();
-            if (result>0){
+            boolean isSaved = itemModel.saveItem(item);
+            if (isSaved){
                 new Alert(Alert.AlertType.INFORMATION,"Item Added Successfully").show();
                 txtCode.setText("");
                 txtDesc.setText("");
@@ -155,4 +153,6 @@ public class ItemFormController {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"))));
         stage.show();
     }
+
+
 }
