@@ -28,7 +28,6 @@ public class CustomerFormController {
     public AnchorPane customerPane;
     public JFXButton btnSave;
     public JFXButton btnUpdate;
-    public JFXButton btnRefresh;
     public JFXTextField txtId;
     public JFXTextField txtName;
     public JFXTextField txtAddress;

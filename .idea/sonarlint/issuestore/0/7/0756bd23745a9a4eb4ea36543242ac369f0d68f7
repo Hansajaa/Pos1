@@ -1,0 +1,60 @@
+
+K
+java:S3740!"/Provide the parametrized type for this generic.(Æí†X8‡¹ Â1
+L
+java:S3740""/Provide the parametrized type for this generic.(ÿÊÕÒ8‡¹ Â1
+Q
+java:S3740("/Provide the parametrized type for this generic.(ŒĞ¶Ñøÿÿÿÿ8‡¹ Â1
+L
+java:S3740)"/Provide the parametrized type for this generic.(èÁƒá8‡¹ Â1
+L
+java:S3740*"/Provide the parametrized type for this generic.(™¼…ÿ8‡¹ Â1
+Q
+java:S3740+"/Provide the parametrized type for this generic.(ê¦„÷üÿÿÿÿ8‡¹ Â1
+L
+java:S3740,"/Provide the parametrized type for this generic.(»§²8‡¹ Â1
+v
+java:S2293›"YReplace the type specification in this constructor call with the diamond operator ("<>").(ñÀ¾A8ˆ¹ Â1
+|
+java:S1104 "ZMake placeOrderPane a static final constant or non-public and provide accessors if needed.(áğÊƒøÿÿÿÿ8ˆ¹ Â1
+v
+java:S1104!"ZMake cmbCustomerIds a static final constant or non-public and provide accessors if needed.(Æí†X8ˆ¹ Â1
+u
+java:S1104""XMake cmbItemCodes a static final constant or non-public and provide accessors if needed.(ÿÊÕÒ8ˆ¹ Â1
+t
+java:S1104#"WMake txtCustName a static final constant or non-public and provide accessors if needed.(‚ğÍ…8ˆ¹ Â1
+|
+java:S1104$"ZMake txtDescription a static final constant or non-public and provide accessors if needed.(«’›™ùÿÿÿÿ8ˆ¹ Â1
+z
+java:S1104%"XMake txtUnitPrice a static final constant or non-public and provide accessors if needed.(©›×Ğùÿÿÿÿ8ˆ¹ Â1
+t
+java:S1104&"RMake txtQty a static final constant or non-public and provide accessors if needed.(„¬‘³øÿÿÿÿ8ˆ¹ Â1
+p
+java:S1104'"TMake tblOrder a static final constant or non-public and provide accessors if needed.(±§­O8ˆ¹ Â1
+u
+java:S1104("SMake colCode a static final constant or non-public and provide accessors if needed.(ŒĞ¶Ñøÿÿÿÿ8ˆ¹ Â1
+p
+java:S1104)"SMake colDesc a static final constant or non-public and provide accessors if needed.(èÁƒá8ˆ¹ Â1
+o
+java:S1104*"RMake colQty a static final constant or non-public and provide accessors if needed.(™¼…ÿ8ˆ¹ Â1
+w
+java:S1104+"UMake colAmount a static final constant or non-public and provide accessors if needed.(ê¦„÷üÿÿÿÿ8ˆ¹ Â1
+r
+java:S1104,"UMake colOption a static final constant or non-public and provide accessors if needed.(»§²8‰¹ Â1
+q
+java:S1104-"TMake lblTotal a static final constant or non-public and provide accessors if needed.(ÿêìˆ8‰¹ Â1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8‰¹ Â1
+a
+java:S2147_"DCombine this catch with the one at line 93, which has the same body.(ıàÑÎ8°¹ Â1
+b
+java:S2147p"ECombine this catch with the one at line 110, which has the same body.(ıàÑÎ8²¹ Â1
+O
+java:S1172u"2Remove this unused method parameter "actionEvent".(÷ïÆı8³¹ Â1
+O
+java:S1172{"2Remove this unused method parameter "actionEvent".(¦Ã¶‰8¸¹ Â1
+a
+java:S1128"?Remove this unused import 'javafx.collections.ObservableArray'.(Ä‹¸İüÿÿÿÿ8Ü¹ Â1
+O
+java:S1128"-Remove this unused import 'javafx.fxml.FXML'.(ÃÚ¢„şÿÿÿÿ8Ü¹ Â1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ü¹ Â1
