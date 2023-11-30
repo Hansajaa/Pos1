@@ -1,8 +1,2 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖŠÔû8ÂĞ¦¯À1
-i
-java:S20953"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8ÏĞ¦¯À1
-l
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ìû—8ÏĞ¦¯À1
-i
-java:S2095)"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8ÏĞ¦¯À1

@@ -109,10 +109,6 @@ public class CustomerFormController {
         }
     }
 
-    public void refreshButtonOnAction(ActionEvent actionEvent) {
-        loadCustomerTable();
-    }
-
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage) customerPane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"))));

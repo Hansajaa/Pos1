@@ -35,7 +35,6 @@
          <children>
             <GridPane GridPane.columnIndex="2" GridPane.rowIndex="2">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="15.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="200.0" />
@@ -50,14 +49,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXTextField fx:id="txtCode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                  <Text layoutX="118.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                  <JFXTextField fx:id="txtDesc" layoutX="61.0" layoutY="43.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Text layoutX="234.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
-                  <JFXTextField fx:id="txtPrice" layoutX="164.0" layoutY="43.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Text layoutX="418.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
-                  <JFXTextField fx:id="txtQty" layoutX="379.0" layoutY="43.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="txtCode" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code" GridPane.halignment="CENTER" />
+                  <Text layoutX="118.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <JFXTextField fx:id="txtDesc" layoutX="61.0" layoutY="43.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Text layoutX="234.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                  <JFXTextField fx:id="txtPrice" layoutX="164.0" layoutY="43.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Text layoutX="418.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                  <JFXTextField fx:id="txtQty" layoutX="379.0" layoutY="43.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -75,11 +74,6 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton onAction="#refreshButtonOnAction" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #1491d5; -fx-background-radius: 8;" text="Refresh" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </JFXButton>
                   <JFXButton layoutX="10.0" layoutY="10.0" onAction="#updateButtonOnAction" prefHeight="44.0" prefWidth="203.0" style="-fx-background-color: #ff6900; -fx-background-radius: 8;" text="Update" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -90,6 +84,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
+                  <JFXTextField fx:id="txtSearch" prefHeight="25.0" prefWidth="141.0" promptText="Search" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">

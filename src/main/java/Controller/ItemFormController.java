@@ -33,6 +33,7 @@ import java.util.List;
 public class ItemFormController {
 
     public JFXTreeTableView<ItemTm> tblItem;
+    public JFXTextField txtSearch;
     @FXML
     private BorderPane itemPane;
 
