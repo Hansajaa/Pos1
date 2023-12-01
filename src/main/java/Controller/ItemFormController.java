@@ -117,36 +117,36 @@ public class ItemFormController {
         }
     }
 
-    public void refreshButtonOnAction(javafx.event.ActionEvent actionEvent) {
-        loadItemTable();
-    }
-
     public void updateButtonOnAction(ActionEvent actionEvent) {
 
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
+        try{
+            ItemDto item=new ItemDto(
+                    txtCode.getText(),
+                    txtDesc.getText(),
+                    Double.parseDouble(txtPrice.getText()),
+                    Integer.parseInt(txtQty.getText())
+            );
 
-        ItemDto item=new ItemDto(
-                txtCode.getText(),
-                txtDesc.getText(),
-                Double.parseDouble(txtPrice.getText()),
-                Integer.parseInt(txtQty.getText())
-        );
-
-        try {
-            boolean isSaved = itemModel.saveItem(item);
-            if (isSaved){
-                new Alert(Alert.AlertType.INFORMATION,"Item Added Successfully").show();
-                txtCode.setText("");
-                txtDesc.setText("");
-                txtPrice.setText("");
-                txtQty.setText("");
+            try {
+                boolean isSaved = itemModel.saveItem(item);
+                if (isSaved){
+                    new Alert(Alert.AlertType.INFORMATION,"Item Added Successfully").show();
+                    txtCode.setText("");
+                    txtDesc.setText("");
+                    txtPrice.setText("");
+                    txtQty.setText("");
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            loadItemTable();
+        }catch (RuntimeException e){
+            new Alert(Alert.AlertType.ERROR,"Enter All Details").show();
         }
-        loadItemTable();
+
     }
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {

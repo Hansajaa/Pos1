@@ -2579,3 +2579,15 @@ Q.idea/sonarlint/securityhotspotstore/e/a/ea662b560ef54a727ae2529ed2cc97ee93e690
 Q.idea/sonarlint/securityhotspotstore/e/d/edaaa87f93e4d5b2eed4d1cdee5f09c4ba2aa294,3\1\3177b66d14a4a9463fd630872ca675452c86718b
 Å
 Q.idea/sonarlint/securityhotspotstore/f/5/f59fd9bafd1dc9a82f6f06ac5555b373778b15c4,b\c\bc320cc9e81d327eb0c5ca0ba4825886a1fa672d
+S
+#src/main/java/Model/OrderModel.java,9\b\9b65c061d41acf7dcc6165c3fd9ede7d5f62a896
+O
+src/main/java/Dto/OrderDto.java,d\f\dfc3fd0613092253d6bcdd4153f1af444524413b
+\
+,src/main/java/Model/Impl/OrderModelImpl.java,3\2\325ebcccbc5534309bba1130e750098308475580
+U
+%src/main/java/Dto/OrderDetailDto.java,4\1\4173009361b573fc3c1f43b0c1e557a2f98cbf7c
+Y
+)src/main/java/Model/OrderDetailModel.java,3\0\3025171a831c61d995f15180416da4d230669665
+b
+2src/main/java/Model/Impl/OrderDetailModelImpl.java,5\9\59254e23a017326c5ab74941fdd5db6a283e7bb0

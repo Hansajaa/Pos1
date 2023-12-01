@@ -89,23 +89,28 @@ public class CustomerFormController {
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
 
-        CustomerDto c = new CustomerDto(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
+        try{
+            CustomerDto c = new CustomerDto(txtId.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText()));
 
-        try {
-            boolean isSaved = customerModel.saveCustomer(c);
+            try {
+                boolean isSaved = customerModel.saveCustomer(c);
 
-            if (isSaved){
-                loadCustomerTable();
-                new Alert(Alert.AlertType.INFORMATION,"Customer Saved").show();
-                txtId.clear();
-                txtName.clear();
-                txtAddress.clear();
-                txtSalary.clear();
+                if (isSaved){
+                    loadCustomerTable();
+                    new Alert(Alert.AlertType.INFORMATION,"Customer Saved").show();
+                    txtId.clear();
+                    txtName.clear();
+                    txtAddress.clear();
+                    txtSalary.clear();
+                }
+
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        }catch (RuntimeException e){
+            new Alert(Alert.AlertType.ERROR,"Enter All Details").show();
         }
+
     }
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {

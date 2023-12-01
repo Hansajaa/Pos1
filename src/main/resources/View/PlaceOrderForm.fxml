@@ -39,7 +39,7 @@
                 <TreeTableColumn fx:id="colOption" prefWidth="154.4000244140625" text="Option" />
             </columns>
         </JFXTreeTableView>
-        <JFXButton layoutX="709.0" layoutY="535.0" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: #fa7178;" text="Place Order" textFill="WHITE">
+        <JFXButton layoutX="709.0" layoutY="535.0" onAction="#placeOrderButtonOnAction" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: #fa7178;" text="Place Order" textFill="WHITE">
             <font>
                 <Font name="System Bold Italic" size="14.0" />
             </font>
@@ -63,9 +63,19 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-      <Label layoutX="406.0" layoutY="199.0" text="CART">
+      <Label layoutX="40.0" layoutY="192.0" prefHeight="18.0" prefWidth="50.0" text="Cart" textAlignment="RIGHT">
          <font>
-            <Font name="Cooper Black" size="14.0" />
+            <Font name="Elephant" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="704.0" layoutY="24.0" prefHeight="26.0" prefWidth="116.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="623.0" layoutY="24.0" prefHeight="26.0" prefWidth="69.0" text="Order Id : ">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
     </children>
