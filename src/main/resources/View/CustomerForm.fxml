@@ -75,5 +75,6 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <JFXTextField fx:id="txtSerach" layoutX="33.0" layoutY="167.0" promptText="Search" unFocusColor="BLACK" />
    </children>
 </AnchorPane>

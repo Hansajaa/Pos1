@@ -10,6 +10,8 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -28,6 +31,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public class ItemFormController {
@@ -73,7 +77,21 @@ public class ItemFormController {
         colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("quantityOnHand"));
         colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
         loadItemTable();
+
+        txtSearch.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String newValue) {
+                tblItem.setPredicate(new Predicate<TreeItem<ItemTm>>() {
+                    @Override
+                    public boolean test(TreeItem<ItemTm> treeItem) {
+                        return treeItem.getValue().getCode().contains(newValue);
+                    }
+                });
+            }
+        });
     }
+
+
 
     private void loadItemTable() {
 
