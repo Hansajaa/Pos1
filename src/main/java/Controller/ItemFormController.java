@@ -1,10 +1,9 @@
 package Controller;
 
-import DB.DBConnection;
 import Dto.ItemDto;
 import Dto.Tm.ItemTm;
-import Model.Impl.ItemModelImpl;
-import Model.ItemModel;
+import dao.Impl.ItemModelImpl;
+import dao.ItemModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -26,10 +25,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 import java.util.function.Predicate;
 
