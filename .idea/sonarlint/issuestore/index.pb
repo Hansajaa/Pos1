@@ -2537,3 +2537,6 @@ P
  src/main/java/dao/ItemModel.java,d\3\d3805e3d01b6d8ede146197cf64a289ca92680c6
 T
 $src/main/java/dao/CustomerModel.java,b\3\b3d325215329891c9b21933301a0b038167780cd
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
