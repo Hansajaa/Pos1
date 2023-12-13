@@ -1,10 +1,10 @@
-package Model.Impl;
+package dao.Impl;
 
 import DB.DBConnection;
-import Dto.OrderDetailDto;
 import Dto.OrderDto;
-import Model.OrderDetailModel;
-import Model.OrderModel;
+import dao.Impl.OrderDetailModelImpl;
+import dao.OrderDetailModel;
+import dao.OrderModel;
 
 import java.sql.*;
 

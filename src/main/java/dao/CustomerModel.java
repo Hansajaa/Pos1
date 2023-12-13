@@ -1,4 +1,4 @@
-package Model;
+package dao;
 
 import Dto.CustomerDto;
 import Dto.ItemDto;
