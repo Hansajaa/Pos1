@@ -8,6 +8,8 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
+@Setter
+@Getter
 public class CustomerTm {
     private String id;
     private String name;

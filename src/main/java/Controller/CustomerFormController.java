@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -38,7 +39,7 @@ public class CustomerFormController {
     public TableColumn colSalary;
     public TableColumn colOption;
     public JFXTextField txtSerach;
-
+    ObservableList<CustomerTm> ctm = FXCollections.observableArrayList();
     CustomerModel customerModel=new CustomerModelImpl();
     public void initialize(){
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -47,11 +48,8 @@ public class CustomerFormController {
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colOption.setCellValueFactory(new PropertyValueFactory<>("btn"));
         loadCustomerTable();
-
-
     }
     private void loadCustomerTable() {
-        ObservableList<CustomerTm> ctm = FXCollections.observableArrayList();
         try {
             List<CustomerDto> dtoList = customerModel.allCustomers();
             for(CustomerDto dto:dtoList){
