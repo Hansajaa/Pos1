@@ -48,8 +48,24 @@ public class CustomerFormController {
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colOption.setCellValueFactory(new PropertyValueFactory<>("btn"));
         loadCustomerTable();
+
+        tblCustomer.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
+            setData(newValue);
+        });
     }
+
+    private void setData(CustomerTm newValue) {
+        if (newValue!=null){
+            txtId.setEditable(false);
+            txtId.setText(newValue.getId());
+            txtName.setText(newValue.getName());
+            txtAddress.setText(newValue.getAddress());
+            txtSalary.setText(String.valueOf(newValue.getSalary()));
+        }
+    }
+
     private void loadCustomerTable() {
+        tblCustomer.getItems().clear();
         try {
             List<CustomerDto> dtoList = customerModel.allCustomers();
             for(CustomerDto dto:dtoList){
@@ -117,5 +133,25 @@ public class CustomerFormController {
         Stage stage=(Stage) customerPane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"))));
         stage.show();
+    }
+
+    public void updateButtonOnAction(ActionEvent actionEvent) {
+        CustomerDto dto=new CustomerDto(
+                txtId.getText(),
+                txtName.getText(),
+                txtAddress.getText(),
+                Double.parseDouble(txtSalary.getText())
+        );
+        try {
+            boolean isUpdated = customerModel.updateCustomer(dto);
+            if (isUpdated){
+                loadCustomerTable();
+                new Alert(Alert.AlertType.CONFIRMATION,"Customer Updated Successfully :)").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Something went wrong :(").show();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR,"Something went Wrong :(").show();
+        }
     }
 }
