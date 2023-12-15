@@ -86,10 +86,22 @@ public class ItemFormController {
                 });
             }
         });
+
+        tblItem.getSelectionModel().selectedItemProperty().addListener((observableValue, oldSelection, newSelection) -> {
+            setData(newSelection.getValue());
+        });
+    }
+
+    private void setData(ItemTm newSelection) {
+        if (newSelection!=null){
+            txtCode.setText(newSelection.getCode());
+            txtDesc.setText(newSelection.getDescription());
+            txtPrice.setText(String.valueOf(newSelection.getUnitPrice()));
+            txtQty.setText(String.valueOf(newSelection.getQuantityOnHand()));
+        }
     }
 
     private void loadItemTable() {
-
         ObservableList<ItemTm> itm = FXCollections.observableArrayList();
         try {
             List<ItemDto> dtoList = itemModel.allItems();
@@ -131,7 +143,27 @@ public class ItemFormController {
     }
 
     public void updateButtonOnAction(ActionEvent actionEvent) {
-
+        try{
+            ItemDto dto = new ItemDto(
+                    txtCode.getText(),
+                    txtDesc.getText(),
+                    Double.parseDouble(txtPrice.getText()),
+                    Integer.parseInt(txtQty.getText())
+            );
+            boolean isUpdated = itemModel.updateItem(dto);
+            if (isUpdated){
+                loadItemTable();
+                new Alert(Alert.AlertType.CONFIRMATION,"Item Updated Successfully :)").show();
+            }else {
+                new Alert(Alert.AlertType.CONFIRMATION,"Item not Updated :(").show();
+            }
+        }catch (RuntimeException e){
+            new Alert(Alert.AlertType.ERROR,"Select a Item").show();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void saveButtonOnAction(ActionEvent actionEvent) {

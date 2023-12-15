@@ -136,22 +136,28 @@ public class CustomerFormController {
     }
 
     public void updateButtonOnAction(ActionEvent actionEvent) {
-        CustomerDto dto=new CustomerDto(
-                txtId.getText(),
-                txtName.getText(),
-                txtAddress.getText(),
-                Double.parseDouble(txtSalary.getText())
-        );
-        try {
-            boolean isUpdated = customerModel.updateCustomer(dto);
-            if (isUpdated){
-                loadCustomerTable();
-                new Alert(Alert.AlertType.CONFIRMATION,"Customer Updated Successfully :)").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Something went wrong :(").show();
+
+            try {
+                CustomerDto dto=new CustomerDto(
+                        txtId.getText(),
+                        txtName.getText(),
+                        txtAddress.getText(),
+                        Double.parseDouble(txtSalary.getText())
+                );
+                try {
+                    boolean isUpdated = customerModel.updateCustomer(dto);
+                    if (isUpdated){
+                        loadCustomerTable();
+                        new Alert(Alert.AlertType.CONFIRMATION,"Customer Updated Successfully :)").show();
+                    }else {
+                        new Alert(Alert.AlertType.ERROR,"Something went wrong :(").show();
+                    }
+                } catch (SQLException | ClassNotFoundException e) {
+                    new Alert(Alert.AlertType.ERROR,"Something went Wrong :(").show();
+                }
+            }catch (RuntimeException e){
+                new Alert(Alert.AlertType.ERROR,"Select a Customer").show();
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR,"Something went Wrong :(").show();
-        }
+
     }
 }
