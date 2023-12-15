@@ -76,4 +76,10 @@ public class DashboardFormController {
         stage.setTitle("Place Order Form");
         stage.show();
     }
+
+    public void ordersButtonOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) dashboardPane.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/OrdersForm.fxml"))));
+        stage.show();
+    }
 }
