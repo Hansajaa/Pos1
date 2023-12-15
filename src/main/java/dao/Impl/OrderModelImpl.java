@@ -7,6 +7,8 @@ import dao.OrderDetailModel;
 import dao.OrderModel;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderModelImpl implements OrderModel {
 
@@ -57,5 +59,25 @@ public class OrderModelImpl implements OrderModel {
             return null;
         }
 
+    }
+
+    @Override
+    public List<OrderDto> allOrders() throws SQLException, ClassNotFoundException {
+        List<OrderDto> dtoList=new ArrayList<>();
+        String sql="SELECT * FROM Orders";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        while (resultSet.next()){
+            dtoList.add(
+              new OrderDto(
+                resultSet.getString(1),
+                resultSet.getString(2),
+                resultSet.getString(3),
+                null
+              )
+            );
+        }
+
+        return dtoList;
     }
 }

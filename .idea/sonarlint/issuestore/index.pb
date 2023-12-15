@@ -2540,3 +2540,13 @@ $src/main/java/dao/CustomerModel.java,b\3\b3d325215329891c9b21933301a0b03816778
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+X
+(src/main/java/Entity/CustomerEntity.java,8\1\81da44e6c3b5cf96dcd5e6effa693e3ac521f033
+T
+$src/main/java/Entity/ItemEntity.java,f\8\f8001c71a3891edebf8f08f2abbfedb27a8121e4
+[
++src/main/java/Entity/OrderDetailEntity.java,5\9\59fde9e072092ae0dab50fd998bf51fdbcd61439
+V
+&src/main/java/Entity/OrdersEntity.java,7\5\75f97e8eaefc5c91ade79bf52894e6ba4fb1461c
+V
+&src/main/java/Dto/Tm/OrdersFormTm.java,c\6\c6371b9d390199ae323910a3caeab46c4c579313
