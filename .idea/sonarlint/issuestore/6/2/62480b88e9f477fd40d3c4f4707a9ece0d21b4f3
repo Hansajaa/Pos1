@@ -22,8 +22,6 @@ O
 java:S1172B"2Remove this unused method parameter "actionEvent".(‹µ­é8¼®œïÆ1
 O
 java:S1172I"2Remove this unused method parameter "actionEvent".(‰£–ü8½®œïÆ1
-O
-java:S1172P"2Remove this unused method parameter "actionEvent".(õØ–8¾®œïÆ1
 Z
 java:S1128
 "8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8¿®œïÆ1
