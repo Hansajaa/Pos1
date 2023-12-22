@@ -6,7 +6,9 @@ import dao.OrderDetailModel;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDetailModelImpl implements OrderDetailModel {
@@ -31,4 +33,29 @@ public class OrderDetailModelImpl implements OrderDetailModel {
 
         return orderDetailsSaved;
     }
+
+    @Override
+    public List<OrderDetailDto> getItems(String value) throws SQLException, ClassNotFoundException {
+        List<OrderDetailDto> items=new ArrayList<>();
+
+        String sql=" SELECT * FROM orderdetail WHERE orderId=? ";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        if (value!=null){
+            pstm.setString(1,value);
+            ResultSet resultSet = pstm.executeQuery();
+
+            while (resultSet.next()){
+                items.add(
+                        new OrderDetailDto(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getInt(3),
+                            resultSet.getDouble(4)
+                        )
+                );
+            }
+        }
+        return items;
+    }
+
 }

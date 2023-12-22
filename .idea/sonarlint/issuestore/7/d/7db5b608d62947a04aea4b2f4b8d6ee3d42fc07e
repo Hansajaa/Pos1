@@ -1,37 +1,37 @@
 
 Q
-java:S37405"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8×ÛŸºÈ1
+java:S37405"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8û‡€‡É1
 Q
-java:S37408"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8ØÛŸºÈ1
+java:S37408"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8û‡€‡É1
 Q
-java:S3740;"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8ØÛŸºÈ1
+java:S3740;"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8ü‡€‡É1
 Q
-java:S3740>"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8ØÛŸºÈ1
+java:S3740>"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8ü‡€‡É1
 Q
-java:S3740A"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8ØÛŸºÈ1
+java:S3740A"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8ü‡€‡É1
 L
-java:S3740z"/Provide the parametrized type for this generic.( åî¸8ÙÛŸºÈ1
+java:S3740z"/Provide the parametrized type for this generic.( åî¸8ü‡€‡É1
 X
-java:S1141²"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÛÛŸºÈ1
-r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ¤›úÿÿÿÿ8ÛÛŸºÈ1
+java:S1141²"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ÿ‡€‡É1
+r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÈ¤›úÿÿÿÿ8ÿ‡€‡É1
 E
-java:S1604P"(Make this anonymous inner class a lambda(óâ›İ8ŞÛŸºÈ1
+java:S1604P"(Make this anonymous inner class a lambda(óâ›İ8€ˆ€‡É1
 J
-java:S1604M"(Make this anonymous inner class a lambda(Î™êÿşÿÿÿÿ8ßÛŸºÈ1
+java:S1604M"(Make this anonymous inner class a lambda(Î™êÿşÿÿÿÿ8€ˆ€‡É1
 p
-java:S1104#"SMake tblItem a static final constant or non-public and provide accessors if needed.(ŸØå¼8àÛŸºÈ1
+java:S1104#"SMake tblItem a static final constant or non-public and provide accessors if needed.(ŸØå¼8ˆ€‡É1
 r
-java:S1104$"UMake txtSearch a static final constant or non-public and provide accessors if needed.(ïò˜§8àÛŸºÈ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ãÛŸºÈ1
+java:S1104$"UMake txtSearch a static final constant or non-public and provide accessors if needed.(ïò˜§8ˆ€‡É1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8…ˆ€‡É1
 N
-java:S1602Z",Remove useless curly braces around statement(Ôª²èıÿÿÿÿ8äÜŸºÈ1
+java:S1602Z",Remove useless curly braces around statement(Ôª²èıÿÿÿÿ8‚‰€‡É1
 N
-java:S1602u",Remove useless curly braces around statement(ÎÈ¤›úÿÿÿÿ8ïÜŸºÈ1
+java:S1602u",Remove useless curly braces around statement(ÎÈ¤›úÿÿÿÿ8Œ‰€‡É1
 P
-java:S1172‘"2Remove this unused method parameter "actionEvent".(°§¾8øÜŸºÈ1
+java:S1172‘"2Remove this unused method parameter "actionEvent".(°§¾8˜‰€‡É1
 c
-java:S2147¤"ECombine this catch with the one at line 162, which has the same body.(ıàÑÎ8ùÜŸºÈ1
+java:S2147¤"ECombine this catch with the one at line 162, which has the same body.(ıàÑÎ8™‰€‡É1
 U
-java:S1172©"2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8ıÜŸºÈ1
+java:S1172©"2Remove this unused method parameter "actionEvent".(”µ³—ÿÿÿÿÿ8£‰€‡É1
 P
-java:S1172Å"2Remove this unused method parameter "actionEvent".(öÛç‰8ÿÜŸºÈ1
+java:S1172Å"2Remove this unused method parameter "actionEvent".(öÛç‰8©‰€‡É1

@@ -2550,3 +2550,5 @@ V
 &src/main/java/Entity/OrdersEntity.java,7\5\75f97e8eaefc5c91ade79bf52894e6ba4fb1461c
 V
 &src/main/java/Dto/Tm/OrdersFormTm.java,c\6\c6371b9d390199ae323910a3caeab46c4c579313
+W
+'src/main/java/Dto/Tm/OrderDetailTm.java,6\7\6732982cfe40210b519abc07b7efe2b46af1e167

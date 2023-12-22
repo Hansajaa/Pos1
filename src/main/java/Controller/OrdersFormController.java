@@ -1,13 +1,18 @@
 package Controller;
 
+import Dto.OrderDetailDto;
 import Dto.OrderDto;
+import Dto.Tm.ItemTm;
+import Dto.Tm.OrderDetailTm;
 import Dto.Tm.OrderTm;
 import Dto.Tm.OrdersFormTm;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import dao.Impl.OrderDetailModelImpl;
 import dao.Impl.OrderModelImpl;
+import dao.OrderDetailModel;
 import dao.OrderModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,10 +34,14 @@ public class OrdersFormController {
     public TreeTableColumn colOrderID;
     public TreeTableColumn colDate;
     public TreeTableColumn colCustomerID;
-
-
+    public JFXTreeTableView<OrderDetailTm> tblItems;
+    public TreeTableColumn colDetailOrderId;
+    public TreeTableColumn colDetailItemCode;
+    public TreeTableColumn colDetailQty;
+    public TreeTableColumn colDetailUnitPrice;
 
     OrderModel orderModel=new OrderModelImpl();
+    OrderDetailModel orderDetailModel=new OrderDetailModelImpl();
     public AnchorPane ordersPane;
 
 
@@ -41,7 +50,44 @@ public class OrdersFormController {
         colDate.setCellValueFactory(new TreeItemPropertyValueFactory<>("date"));
         colCustomerID.setCellValueFactory(new TreeItemPropertyValueFactory<>("custId"));
         loadOrdersTable();
+
+        colDetailOrderId.setCellValueFactory(new TreeItemPropertyValueFactory<>("orderId"));
+        colDetailItemCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("itemCode"));
+        colDetailQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
+        colDetailUnitPrice.setCellValueFactory(new TreeItemPropertyValueFactory<>("unitPrice"));
+
+        tblOrders.getSelectionModel().selectedItemProperty().addListener((observableValue, oldSelection, newSelection) -> {
+            setData(newSelection.getValue());
+        });
     }
+
+    private void setData(OrdersFormTm newValue) {
+        ObservableList<OrderDetailTm> detailTms = FXCollections.observableArrayList();
+        try {
+            if (newValue!=null) {
+                List<OrderDetailDto> items = orderDetailModel.getItems(newValue.getId());
+                for (OrderDetailDto dto:items) {
+                    detailTms.add(
+                            new OrderDetailTm(
+                                    dto.getOrderId(),
+                                    dto.getItemCode(),
+                                    dto.getQty(),
+                                    dto.getUnitPrice()
+                            )
+                    );
+                }
+                RecursiveTreeItem treeItem = new RecursiveTreeItem<>(detailTms, RecursiveTreeObject::getChildren);
+                tblItems.setRoot(treeItem);
+                tblItems.setShowRoot(false);
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     private void loadOrdersTable() {
         ObservableList<OrdersFormTm> orderTms = FXCollections.observableArrayList();
